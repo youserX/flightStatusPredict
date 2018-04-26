@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simtableation restablet</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap-datetimepicker.css">
+    <link href="../static/css/bootstrap-datetimepicker.min.css">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+        <div class="jumbotron">
+            <table class="table table-hover">
+                <tr><td>weather information is shown below:</td></tr>
+                <tr><td>Humidity is {{ fa['Humidity'][0] }}%</td></tr>
+                <tr><td>Pressure is {{ fa['Pressure'][0] }} Kpa</td></tr>
+                <tr><td>Visibility is {{ fa['Visibility'][0] }}Km</td></tr>
+                <tr><td>Wind direction is {{ wind[fa['Wind Dir'][0]] }}</td></tr>
+                <tr><td>Wind Speed is {{ fa['Wind Speed'][0] }} Km/h</td></tr>
+                {% if Paris[0]<0 %}
+                <tr><td>flight will be arrived delay {{ Paris[0]*-1 }} minutes</td></tr>
+                {% else %}
+                <tr><td>flight will be arrived early {{ Paris[0] }} minutes</td></tr>
+                {% endif %}
+                {% if SH[0] < 0 %}
+                <tr><td>flight will be landed delay {{ SH[0]*-1 }} minutes</td></tr>
+                {% else %}
+                <tr><td>flight will be landed early {{ SH[0] }} minutes</td></tr>
+                {% endif %}
+            </table>
+        </div>
+</div>
+</body>
+</html>

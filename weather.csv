@@ -1,0 +1,17 @@
+date,time,Humidity,Pressure,Visibility,Wind Dir,Wind Speed,Conditions
+,,,,,,,
+1,11:00 PM,87%,1010,10,West,22.2,Scattered Clouds
+,,,,,,,
+2,11:00 PM,88%,1007,10,SSW,29.6,Mostly Cloudy
+,,,,,,,
+3,11:00 PM,none,none,none,none,none,none
+,,,,,,,
+4,11:00 PM,82%,1003,10,SW,22.2,Mostly Cloudy
+,,,,,,,
+6,11:00 PM,94%,1013,5,NNE,14.8,Light Rain
+,,,,,,,
+7,11:00 PM,85%,1020,15,NE,18.5,Overcast
+,,,,,,,
+8,11:00 PM,90%,1014,9,ENE,13,Mostly Cloudy
+,,,,,,,
+9,11:00 PM,96%,1009,6,South,20.4,Light Drizzle

@@ -1,0 +1,24 @@
+date,time,Humidity,Pressure,Visibility,Wind Dir,Wind Speed,Conditions,Status,Time
+2018/1/1,11:30 PM,87%,1010,10,West,22.2,Scattered Clouds,Delay,0:23
+2018/1/2,11:30 PM,88%,1007,10,SSW,29.6,Mostly Cloudy,Delay,0:25
+2018/1/4,11:30 PM,82%,1003,10,SW,22.2,Mostly Cloudy,Delay,0:34
+2018/1/5,11:30 PM,87%,1002,20,South,11.1,Scattered Clouds,Delay,0:31
+2018/1/6,11:30 PM,94%,1013,5,NNE,14.8,Light Rain,Delay,0:18
+2018/1/7,11:30 PM,85%,1020,15,NE,18.5,Overcast,Delay,0:37
+2018/1/8,11:30 PM,90%,1014,9,ENE,13,Mostly Cloudy,Delay,0:18
+2018/1/9,11:30 PM,96%,1009,6,South,20.4,Light Drizzle,Delay,0:52
+2018/3/31,11:30 PM,87%,1005,10,West,14.8,Mostly Cloudy,Delay,0:40
+2018/4/1,11:30 PM,66%,1012,12,SSE,13,Clear,Delay,0:44
+2018/4/2,11:30 PM,82%,1000,17,South,11.1,Clear,Early,0:02
+2018/4/4,11:30 PM,82%,1003,10,SW,27.8,Mostly Cloudy,Delay,0:35
+2018/4/5,11:30 PM,82%,1003,10,SW,27.8,Mostly Cloudy,Delay,0:59
+2018/4/6,11:30 PM,59%,1008,30,ESE,24.1,Clear,Delay,0:24
+2018/4/8,11:30 PM,63%,1008,30,South,13,Clear,Delay,0:31
+2018/4/9,11:30 PM,94%,1002,5,South,11.1,Mostly Cloudy,Delay,0:10
+2018/4/10,11:30 PM,71%,1003,25,East,14.8,Clear,Delay,0:10
+2018/4/11,11:30 PM,63%,1002,30,NNE,13,Clear,Delay,3:06
+2018/4/12,11:30 PM,94%,1001,6,South,13,Mostly Cloudy,Delay,0:02
+2018/4/13,11:30 PM,72%,1013,25,South,3.7,Clear,Delay,3:30
+2018/4/14,11:30 PM,82%,1016,30,SSE,9.3,Clear,Early,0:09
+2018/4/16,11:30 PM,58%,1020,20,SSW,7.4,Clear,Delay,0:22
+2018/4/17,11:30 PM,55%,1027,20,SE,9.3,Clear,Early,0:04

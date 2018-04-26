@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The next three days information</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap-datetimepicker.css">
+    <link href="../static/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="../static/highcharts.js"></script>
+    <script src="../static/exporting.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg"><div id="chart" style="min-width:300px;height:300px;"></div></div>
+                  <div class="col-lg"><div id="chart2" style="min-width:300px;height:300px;"></div></div>
+                </div>
+            </div>
+                <script type="text/javascript">
+                    // Build the chart
+                    Highcharts.chart('chart', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Paris airport land status corporation in following 3 days'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: false
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: 'Corporations',
+                            colorByPoint: true,
+                            data: [
+                                {
+                                    name:'Delay',
+                                    y:{{ corp_p[0] }}
+                                },
+                                {
+                                    name:'Early',
+                                    y:{{ corp_p[1] }}
+                                }
+                            ]
+                        }]
+                    });
+                </script>
+            <script type="text/javascript">
+                    // Build the chart
+                    Highcharts.chart('chart2', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Shanghai airport land status corporation in following 3 days'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: false
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: 'Corporations',
+                            colorByPoint: true,
+                            data: [
+                                {
+                                    name:'Delay',
+                                    y:{{ corp_s[0] }}
+                                },
+                                {
+                                    name:'Early',
+                                    y:{{ corp_s[1] }}
+                                }
+                            ]
+                        }]
+                    });
+                </script>
+
+            <table class="table table-hover">
+                <caption>Following 3 days weather and flight statues prediction</caption>
+                <thead>
+                    <th>date</th>
+                    <th>Location</th>
+                    <th>Humidity</th>
+                    <th>Pressure</th>
+                    <th>Visibility</th>
+                    <th>Wind Direction</th>
+                    <th>Wind Speed</th>
+                    <th>Flight Status</th>
+                    <th>Time</th>
+                </thead>
+                <tbody>
+                {% for i in [0, 1, 2] %}
+                    <tr>
+                    <th scope="row">{{ dt[i] }}</th>
+                    <td>Paris</td>
+                    <td>{{ factors_Paris['Humidity'][i] }}%</td>
+                    <td>{{ factors_Paris['Pressure'][i] }}Kpa</td>
+                    <td>{{ factors_Paris['Visibility'][i] }}Km</td>
+                    <td>{{ wind[factors_Paris['Wind Dir'][i]] }}</td>
+                    <td>{{ factors_Paris['Wind Speed'][i] }}km/h</td>
+                    {% if p_Paris[i] < 0 %}
+                        <td>Delay</td>
+                        <td>{{ p_Paris[i]*-1 }}minutes</td>
+                    {% else %}
+                        <td>Early</td>
+                        <td>{{ p_Paris[i] }}minutes</td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+
+                {% for i in [0, 1, 2] %}
+                    </tr>
+                    <th scope="row">{{ dt[i] }}</th>
+                    <td>Shanghai</td>
+                    <td>{{ factors_SH['Humidity'][i] }}%</td>
+                    <td>{{ factors_SH['Pressure'][i] }}Kpa</td>
+                    <td>{{ factors_SH['Visibility'][i] }}Km</td>
+                    <td>{{ wind[factors_SH['Wind Dir'][i]] }}</td>
+                    <td>{{ factors_SH['Wind Speed'][i] }}km/h</td>
+                    {% if p_SH[i] < 0 %}
+                        <td>Delay</td>
+                        <td>{{ p_SH[i]*-1 }}minutes</td>
+                    {% else %}
+                        <td>Early</td>
+                        <td>{{ p_SH[i] }}minutes</td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

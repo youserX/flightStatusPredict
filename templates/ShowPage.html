@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowPage</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap-datetimepicker.css">
+    <link href="../static/css/bootstrap-datetimepicker.min.css">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="form-group">
+            <form class="form-signin" action="/calculate" method="post">
+            <p>Please entry your location, destination and when you want to travel!</p>
+
+            <label for="inputLocation" class="sr-only">Location</label>
+                    <input type="inputLocation" name="inputLocation" id="inputLocation" class="form-control" placeholder="Location" required autofocus>
+            <label for="inputDestination" class="sr-only">Destination</label>
+                    <input type="inputDestination" name="inputDestination" id="inputDestination" class="form-control" placeholder="Destination" required autofocus>
+            <br>
+
+        <div class="form-group">
+           <label for="dtp_input2" class="col-md-2 control-label">Date Picking</label>
+           <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" name="pickedDate" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input2" value="" /><br/>
+        </div>
+
+    <button type="submit" id="dtp_input" class="btn btn-info btn-lg" >Get Result</button><span class="">(clicking without date will show following 3 days )</span>
+    </form>
+        </div>
+
+    <div class="form-group">
+        <form class="form-signin" action="/calculate2" method="post">
+            <p>Please entry your location, destination weather details!</p>
+
+            <label for="inputLocation" class="sr-only">Location</label>
+                    <input type="inputLocation" name="inputLocation" id="inputLocation" class="form-control" placeholder="Location" required autofocus>
+            <label for="inputDestination" class="sr-only">Destination</label>
+                    <input type="inputDestination" name="inputDestination" id="inputDestination" class="form-control" placeholder="Destination" required autofocus>
+            <br>
+
+            <label for="Humidity" class="sr-only">Humidity</label>
+                    <input type="Humidity" name="Humidity" id="Humidity" class="form-control" placeholder="Humidity" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" required autofocus>
+            <label for="Pressure" class="sr-only">Pressure</label>
+                    <input type="Pressure" name="Pressure" id="Pressure" class="form-control" placeholder="Pressure" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" required autofocus>
+            <label for="Visibility" class="sr-only">Humidity</label>
+                    <input type="Visibility" name="Visibility" id="Visibility" class="form-control" placeholder="Visibility" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" required autofocus>
+            <label for="Wind_Dir" class="sr-only">Wind Dir</label>
+                    <input type="Wind_Dir" name="Wind_Dir" id="Wind_Dir" class="form-control" placeholder="Wind_Dir" required autofocus>
+            <label for="Wind_Speed" class="sr-only">WindSpeed</label>
+                    <input type="Wind_Speed" name="Wind_Speed" id="Wind_Speed" class="form-control" placeholder="Wind_Speed" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" required autofocus>
+            <br>
+
+            <button type="submit" id="dtp_input" class="btn btn-info btn-lg" >Get Result</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
+
+</body>
+</html>
